@@ -10,16 +10,33 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var treeImage: UIImageView!
+    @IBOutlet var letterButtons: [UIButton]!
+    @IBOutlet weak var correctWorldLabel: UILabel!
+    @IBOutlet weak var scoreLabel: UILabel!
+    
+    var listOfWords: Array<String> = ["food","names","hobbies","animals","household objects","else"]
+    let incorrectMovesAllowed = 7
+    var totalWins = 0
+    var totalLosses = 0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        newRound()
     }
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
 
-
+    @IBAction func buttonTapped(_ sender: UIButton) {
+        sender.isEnabled = false
+    }
+    
+    func newRound(){
+    
+    }
+    
 }
-
