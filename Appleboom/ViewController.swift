@@ -49,9 +49,9 @@ class ViewController: UIViewController {
     }
     
     func updateUI() {
+        correctWorldLabel.text = currentGame.formatteWord
         scoreLabel.text = "wins: \(totalWins), losses: \(totalLosses)"
         treeImage.image = UIImage(named: "Tree \(currentGame.incorrectMovesRemaining)")
     }
-    
     
 }
