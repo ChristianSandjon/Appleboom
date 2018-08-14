@@ -14,8 +14,10 @@ class ViewController: UIViewController {
     @IBOutlet var letterButtons: [UIButton]!
     @IBOutlet weak var correctWorldLabel: UILabel!
     @IBOutlet weak var scoreLabel: UILabel!
-    
     var listOfWords: Array<String> = ["food","names","hobbies","animals","household objects","else"]
+    var currentGame: Game!
+    
+    
     let incorrectMovesAllowed = 7
     var totalWins = 0
     var totalLosses = 0
@@ -33,9 +35,11 @@ class ViewController: UIViewController {
 
     @IBAction func buttonTapped(_ sender: UIButton) {
         sender.isEnabled = false
+        let letterString = sender.title(for: .normal)!
+        let letter = Character(letterString.lowercased())
     }
     
-    var currentGame: Game!
+  
     
     func newRound(){
         let newWord = listOfWords.removeFirst()
