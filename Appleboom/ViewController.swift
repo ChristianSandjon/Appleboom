@@ -35,8 +35,18 @@ class ViewController: UIViewController {
         sender.isEnabled = false
     }
     
-    func newRound(){
+    var currentGame: Game!
     
+    func newRound(){
+        let newWord = listOfWords.removeFirst()
+        currentGame = Game (word: newWord, incorrectMovesRemaining : incorrectMovesAllowed)
+        updateUI()
     }
+    
+    func updateUI() {
+        scoreLabel.text = "wins: \(totalWins), losses: \(totalLosses)"
+        treeImage.image = UIImage(named: "Tree \(currentGame.incorrectMovesRemaining)")
+    }
+    
     
 }
